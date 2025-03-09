@@ -1,0 +1,136 @@
+// Базовый URL вашего API
+const API_URL = 'https://your-api-url.com/api';
+
+/**
+ * Получение списка чатов для тестирования
+ * @returns {Promise<Array>} Массив чатов
+ */
+export async function fetchChats() {
+  try {
+    // Для реального API раскомментируйте этот код
+    // const response = await fetch(`${API_URL}/chats`);
+    // if (!response.ok) {
+    //   throw new Error(`HTTP error! Status: ${response.status}`);
+    // }
+    // return await response.json();
+
+    // Моковые данные для примера
+    return [
+      {
+        id: 1,
+        companyName: 'Acme Corp',
+        crmSystem: 'Salesforce',
+        previewText: 'I need help with my recent order #A12345.',
+        messageCount: 5,
+        time: '10:23',
+        status: 'pending' // pending, success, error
+      },
+      {
+        id: 2,
+        companyName: 'GlobalTech',
+        crmSystem: 'Zendesk',
+        previewText: 'I\'m having trouble logging into my account.',
+        messageCount: 6,
+        time: '09:15',
+        status: 'success'
+      },
+      {
+        id: 3,
+        companyName: 'TechStart',
+        crmSystem: 'Intercom',
+        previewText: 'Does your DataSync Pro support Excel integration?',
+        messageCount: 5,
+        time: '16:45',
+        status: 'error'
+      }
+    ];
+  } catch (error) {
+    console.error('Ошибка при получении данных:', error);
+    throw error;
+  }
+}
+
+/**
+ * Получение деталей чата по ID
+ * @param {Number} chatId - ID чата
+ * @returns {Promise<Object>} Объект с деталями чата
+ */
+export async function fetchChatDetails(chatId) {
+  try {
+    // Для реального API раскомментируйте этот код
+    // const response = await fetch(`${API_URL}/chats/${chatId}`);
+    // if (!response.ok) {
+    //   throw new Error(`HTTP error! Status: ${response.status}`);
+    // }
+    // return await response.json();
+
+    // Моковые данные для примера
+    return {
+      id: chatId,
+      companyName: 'Acme Corp',
+      crmSystem: 'Salesforce',
+      timestamp: '07/03/2025, 10:23:45',
+      crmLink: '#',
+      messages: [
+        {
+          sender: 'customer',
+          content: 'I need help with my recent order #A12345.'
+        },
+        {
+          sender: 'ai',
+          content: 'I\'d be happy to help with your order #A12345. Let me look that up for you.'
+        },
+        {
+          sender: 'ai',
+          content: 'I can see your order was shipped yesterday and should arrive by March 10th. Would you like the tracking number?'
+        },
+        {
+          sender: 'customer',
+          content: 'Yes, please.'
+        },
+        {
+          sender: 'ai',
+          content: 'The tracking number is TRK78901234. You can track it at our website or the carrier\'s site.'
+        }
+      ]
+    };
+  } catch (error) {
+    console.error('Ошибка при получении деталей чата:', error);
+    throw error;
+  }
+}
+
+/**
+ * Отправка обратной связи по конкретному сообщению в чате
+ * @param {Number} chatId - ID чата
+ * @param {Number} messageIndex - Индекс сообщения
+ * @param {String} comment - Комментарий с обратной связью
+ * @returns {Promise<Object>} Результат операции
+ */
+export async function submitFeedback(chatId, messageIndex, comment) {
+  try {
+    // Для реального API раскомментируйте этот код
+    // const response = await fetch(`${API_URL}/feedback`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     chatId,
+    //     messageIndex,
+    //     comment
+    //   }),
+    // });
+    // if (!response.ok) {
+    //   throw new Error(`HTTP error! Status: ${response.status}`);
+    // }
+    // return await response.json();
+
+    // Моковый ответ для примера
+    console.log('Отправка обратной связи:', { chatId, messageIndex, comment });
+    return { success: true };
+  } catch (error) {
+    console.error('Ошибка при отправке обратной связи:', error);
+    throw error;
+  }
+}
