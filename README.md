@@ -1,3 +1,7 @@
+![image](https://github.com/user-attachments/assets/b2e43b59-6d88-44cc-a702-b7cde7eb2277)
+
+## Добавление комментария
+![image](https://github.com/user-attachments/assets/29f40e23-b3b0-4e0a-a65d-747dc47ed25d)
 
 ## 🌟 Основные возможности
 
